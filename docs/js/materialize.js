@@ -2150,7 +2150,7 @@ $(document).ready(function(){
 
         // if closeOnClick, then add close event for all a tags in side sideNav
         if (options.closeOnClick === true) {
-          menu_id.on("click.itemclick", "a:not(.collapsible-header)", function(){
+          menu_id.on("click.itemclick touch", "a:not(.collapsible-header)", function(){
             removeMenu();
           });
         }
@@ -2238,7 +2238,7 @@ $(document).ready(function(){
             // If overlay does not exist, create one and if it is clicked, close menu
             if ($('#sidenav-overlay').length === 0) {
               var overlay = $('<div id="sidenav-overlay"></div>');
-              overlay.css('opacity', 0).click( function(){
+              overlay.css('opacity', 0).on("click touch", function(){
                 removeMenu();
               });
               $('body').append(overlay);
